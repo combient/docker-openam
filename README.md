@@ -2,13 +2,7 @@
 
 ![Docker Stars](https://img.shields.io/docker/stars/wdijkerman/openam.svg) ![Docker Pulls](https://img.shields.io/docker/pulls/wdijkerman/openam.svg) [![](https://images.microbadger.com/badges/version/wdijkerman/openam.svg)](http://microbadger.com/images/wdijkerman/openam "Get your own version badge on microbadger.com") [![](https://images.microbadger.com/badges/image/wdijkerman/openam.svg)](http://microbadger.com/images/wdijkerman/openam "Get your own image badge on microbadger.com") [![Build Status](https://travis-ci.org/dj-wasabi/docker-openam.svg?branch=master)](https://travis-ci.org/dj-wasabi/docker-openam) 
 
-This container is running a Java 8 with Tomcat 8 for OpenAM. This container is used for testing/validating the 'python-openam' module. This module can be found here: https://github.com/dj-wasabi/python-openam
-
-This container has 2 tags:
-* 12.0.0
-* 13.0.0
-
-There is no 13.5.0 tag yet.
+This container is running a Java 8 with Tomcat 8 for OpenAM. 
 
 # Usage
 
@@ -19,7 +13,7 @@ docker pull wdijkerman/openam:13.0.0
 docker run -d -h openam.example.com --name openam -p 8080:8080 wdijkerman/openam:13.0.0
 ```
 
-This will bootup the container and start OpenAM. You'll have to make sure you put `openam.example.com` in your hosts file, otherwise you can't access OpenAM.
+This will bootup the container and start OpenAM. You'll have to make sure you put `127.0.0.1  ldap.docker.combient.local` in your hosts file, otherwise you can't access OpenAM.
 Check the logs to see when the container is booted correctly:
 ```
 docker logs -f openam
@@ -40,7 +34,7 @@ Configuration complete!
 
 Configuration is complete and you should be able to open the login page by opening the following url:
 ```
-http://openam.example.com/openam
+http://ldap.docker.combient.local:8080/openam/XUI/#login/
 ```
 
 # Version
