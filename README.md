@@ -1,6 +1,6 @@
 # docker-openam
 
-![Docker Stars](https://img.shields.io/docker/stars/wdijkerman/openam.svg) ![Docker Pulls](https://img.shields.io/docker/pulls/wdijkerman/openam.svg) [![](https://images.microbadger.com/badges/version/wdijkerman/openam.svg)](http://microbadger.com/images/wdijkerman/openam "Get your own version badge on microbadger.com") [![](https://images.microbadger.com/badges/image/wdijkerman/openam.svg)](http://microbadger.com/images/wdijkerman/openam "Get your own image badge on microbadger.com") [![Build Status](https://travis-ci.org/dj-wasabi/docker-openam.svg?branch=master)](https://travis-ci.org/dj-wasabi/docker-openam) 
+based on wdijkerman/openam:13.0.0
 
 This container is running a Java 8 with Tomcat 8 for OpenAM. 
 
@@ -9,11 +9,11 @@ This container is running a Java 8 with Tomcat 8 for OpenAM.
 Using the container can be done like this:
 
 ```
-docker pull wdijkerman/openam:13.0.0
-docker run -d -h openam.example.com --name openam -p 8080:8080 wdijkerman/openam:13.0.0
+docker pull combient/openam:latest
+docker run -d -h openam.example.com --name openam -p 8080:8080 combient/openam:latest
 ```
 
-This will bootup the container and start OpenAM. You'll have to make sure you put `127.0.0.1  ldap.docker.combient.local` in your hosts file, otherwise you can't access OpenAM.
+This will bootup the container and start OpenAM. You'll have to make sure you put `127.0.0.1  openam.example.com` in your hosts file, otherwise you can't access OpenAM.
 Check the logs to see when the container is booted correctly:
 ```
 docker logs -f openam
@@ -34,7 +34,7 @@ Configuration complete!
 
 Configuration is complete and you should be able to open the login page by opening the following url:
 ```
-http://ldap.docker.combient.local:8080/openam/XUI/#login/
+http://openam.example.com:8080/openam/XUI/#login/
 ```
 
 # Version
